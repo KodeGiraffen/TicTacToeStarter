@@ -48,22 +48,22 @@ public class TicTacViewController implements Initializable
             Integer col = GridPane.getColumnIndex((Node) event.getSource());
             int r = (row == null) ? 0 : row;
             int c = (col == null) ? 0 : col;
-            int player = game.getNextPlayer();
+            int player = game.getCurrentPlayer();
+
             if (game.play(c, r))
             {
+                Button btn = (Button) event.getSource();
+                String xOrO = player == 0 ? "💀" : "👻";
+                btn.setText(xOrO);
+
                 if (game.isGameOver())
                 {
                     int winner = game.getWinner();
                     displayWinner(winner);
-                    Button btn = (Button) event.getSource();
-                    String xOrO = player == 0 ? "💀" : "👻";
-                    btn.setText(xOrO);
+
                 }
                 else
                 {
-                    Button btn = (Button) event.getSource();
-                    String xOrO = player == 0 ? "💀" : "👻";
-                    btn.setText(xOrO);
                     setPlayer();
                 }
             }
@@ -109,7 +109,8 @@ public class TicTacViewController implements Initializable
      */
     private void setPlayer()
     {
-        lblPlayer.setText(TXT_PLAYER + game.getNextPlayer());
+        int currentPlayer = game.getCurrentPlayer();
+        lblPlayer.setText(TXT_PLAYER + currentPlayer);
     }
 
 
@@ -125,9 +126,14 @@ public class TicTacViewController implements Initializable
             case -1:
                 message = "It's a draw :-(";
                 break;
-            default:
-                message = "Player " + winner + " wins!!!";
+            case 0:
+                message = "Player 0 wins!!!";
                 break;
+            case 1:
+                message = "Player 1 wins!!!";
+                break;
+            default:
+                message = "idk chief";
         }
         lblPlayer.setText(message);
     }

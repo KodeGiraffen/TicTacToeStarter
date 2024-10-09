@@ -15,13 +15,19 @@ public class GameBoard implements IGameBoard
     private boolean gameOver;
     private int winner;
 
+
     public GameBoard() { newGame();}
+    @Override
+    public int getCurrentPlayer() {
+        return currentPlayer;
+    }
 
     /**
      * Returns 0 for player 0, 1 for player 1.
      *
      * @return int Id of the next player.
      */
+    @Override
     public int getNextPlayer() {return (currentPlayer == 0) ? 1 : 0;}
 
 
@@ -35,6 +41,7 @@ public class GameBoard implements IGameBoard
      * @return true if the move is accepted, otherwise false. If gameOver == true
      * this method will always return false.
      */
+    @Override
     public boolean play(int col, int row)
     {
         //stops game if there is no legal moves left
