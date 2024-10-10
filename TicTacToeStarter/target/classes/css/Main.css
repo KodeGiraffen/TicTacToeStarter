@@ -3,3 +3,22 @@
     -fx-background-repeat: stretch;   
     -fx-background-position: center;
 }
+.button {
+    -fx-border-radius: 2px;
+}
+
+.custom-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+    -fx-border-width: 2px;
+}
+
+.custom-button:hover {
+    -fx-background-color: #fff;
+    -fx-cursor: hand;
+    -fx-border-width: 4px;
+    -fx-border-color: black;
+    -fx-border-insets: -2px;
+
+}
