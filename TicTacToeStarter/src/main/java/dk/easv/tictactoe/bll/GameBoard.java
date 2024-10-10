@@ -41,7 +41,7 @@ public class GameBoard implements IGameBoard
      * @return true if the move is accepted, otherwise false. If gameOver == true
      * this method will always return false.
      */
-    @Override
+
     public boolean play(int col, int row)
     {
         //stops game if there is no legal moves left
@@ -140,8 +140,8 @@ public class GameBoard implements IGameBoard
 
     // checks if the game ended in a draw
     private boolean checkDraw(){
-        for (int i = 1; i < BOARD_SIZE; i++){
-            for (int j = 1; j < BOARD_SIZE; j++){
+        for (int i = 0; i < BOARD_SIZE; i++){
+            for (int j = 0; j < BOARD_SIZE; j++){
                 if (board[i][j] == EMPTY){
                     return false;
                 }
