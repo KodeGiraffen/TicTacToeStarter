@@ -15,7 +15,7 @@
 }
 
 .custom-button:hover {
-    -fx-background-color: derive(#862fe0, 10%);
+    -fx-background-color: #862fe0;
     -fx-cursor: hand;
     -fx-border-width: 4px;
     -fx-border-color: black;
@@ -30,7 +30,7 @@
 }
 
 .custom-buttonorange:hover {
-    -fx-background-color: derive(#ff9900, 20%);
+    -fx-background-color: #ff9900;
     -fx-cursor: hand;
     -fx-border-width: 4px;
     -fx-border-color: black;

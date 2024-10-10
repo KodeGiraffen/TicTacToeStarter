@@ -110,7 +110,7 @@ public class TicTacViewController implements Initializable
     private void setPlayer()
     {
         int currentPlayer = game.getCurrentPlayer();
-        lblPlayer.setText(TXT_PLAYER + currentPlayer);
+        lblPlayer.setText(TXT_PLAYER + currentPlayer + "'s turn");
     }
 
 
